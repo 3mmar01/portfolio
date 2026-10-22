@@ -24,7 +24,7 @@ export function Hero({ user, loading }: HeroProps) {
                 alt={`${user.name}'s GitHub avatar`}
                 width={80}
                 height={80}
-                className="rounded-full border-2 border-gray-200 dark:border-gray-700 grayscale hover:grayscale-0 transition-all duration-500"
+                className="rounded-full border-2 border-gray-200 dark:border-gray-700 transition-all duration-500"
               />
 
               {/* Name */}
