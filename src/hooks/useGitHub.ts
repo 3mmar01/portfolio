@@ -10,7 +10,8 @@ export function useGitHub(username: string): UseGitHubReturn {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!username) return;
+    if (!username) 
+      return;
 
     let cancelled = false;
 
