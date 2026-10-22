@@ -105,7 +105,7 @@ export function Stats({ user, repos, loading }: StatsProps) {
             <img
               src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&hide_border=true&title_color=171717&icon_color=525252&text_color=404040&bg_color=ffffff`}
               alt="GitHub contribution stats (dark)"
-              className="border border-gray-800 rounded-lg max-w-full sm:max-w-sm hidden dark:block dark:invert"
+              className="border border-gray-300 rounded-lg max-w-full sm:max-w-sm hidden dark:block dark:invert"
               loading="lazy"
             />
             {/* Single top-langs image — same URL for both modes, invert in dark */}
@@ -118,7 +118,7 @@ export function Stats({ user, repos, loading }: StatsProps) {
             <img
               src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&hide_border=true&title_color=171717&text_color=404040&bg_color=ffffff`}
               alt="Top programming languages (dark)"
-              className="border border-gray-800 rounded-lg max-w-full sm:max-w-xs hidden dark:block dark:invert"
+              className="border border-gray-300 rounded-lg max-w-full sm:max-w-xs hidden dark:block dark:invert"
               loading="lazy"
             />
           </div>
