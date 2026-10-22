@@ -95,19 +95,20 @@ export function Stats({ user, repos, loading }: StatsProps) {
             Contribution Graph
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 items-start">
+            {/* Single stats image — invert in dark mode to avoid dual-request data skew */}
             <img
-              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&theme=default&hide_border=true&title_color=171717&icon_color=525252&text_color=404040&bg_color=ffffff`}
+              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&hide_border=true&title_color=171717&icon_color=525252&text_color=404040&bg_color=ffffff`}
               alt="GitHub contribution stats"
               className="border border-gray-200 dark:border-gray-800 rounded-lg max-w-full sm:max-w-sm dark:hidden"
               loading="lazy"
             />
-            {/* Dark mode version of stats */}
             <img
-              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&theme=dark&hide_border=true&title_color=f5f5f5&icon_color=a3a3a3&text_color=d4d4d4&bg_color=0a0a0a`}
+              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&hide_border=true&title_color=171717&icon_color=525252&text_color=404040&bg_color=ffffff`}
               alt="GitHub contribution stats (dark)"
-              className="border border-gray-800 rounded-lg max-w-full sm:max-w-sm hidden dark:block"
+              className="border border-gray-800 rounded-lg max-w-full sm:max-w-sm hidden dark:block dark:invert"
               loading="lazy"
             />
+            {/* Single top-langs image — same URL for both modes, invert in dark */}
             <img
               src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&hide_border=true&title_color=171717&text_color=404040&bg_color=ffffff`}
               alt="Top programming languages"
@@ -115,9 +116,9 @@ export function Stats({ user, repos, loading }: StatsProps) {
               loading="lazy"
             />
             <img
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&hide_border=true&title_color=f5f5f5&text_color=d4d4d4&bg_color=0a0a0a`}
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&hide_border=true&title_color=171717&text_color=404040&bg_color=ffffff`}
               alt="Top programming languages (dark)"
-              className="border border-gray-800 rounded-lg max-w-full sm:max-w-xs hidden dark:block"
+              className="border border-gray-800 rounded-lg max-w-full sm:max-w-xs hidden dark:block dark:invert"
               loading="lazy"
             />
           </div>
