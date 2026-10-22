@@ -23,3 +23,10 @@ export interface GitHubRepo {
   fork: boolean;
   topics: string[];
 }
+
+export type UseGitHubReturn = {
+  user: GitHubUser | null;
+  repos: GitHubRepo[];
+  loading: boolean;
+  error: string | null;
+};
