@@ -14,7 +14,7 @@ const LANGUAGE_COLORS: Record<string, string> = {
 
 import type { GitHubRepo } from '../../types/github';
 
-interface RepoCardProps {
+type RepoCardProps = {
   repo: GitHubRepo;
 }
 
