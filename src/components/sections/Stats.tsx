@@ -95,30 +95,32 @@ export function Stats({ user, repos, loading }: StatsProps) {
             Contribution Graph
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 items-start">
-            {/* Single stats image — invert in dark mode to avoid dual-request data skew */}
+            {/* Light mode stats */}
             <img
               src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&hide_border=true&title_color=171717&icon_color=525252&text_color=404040&bg_color=ffffff`}
               alt="GitHub contribution stats"
-              className="border border-gray-200 dark:border-gray-800 rounded-lg max-w-full sm:max-w-sm dark:hidden"
+              className="border border-gray-200 rounded-lg max-w-full sm:max-w-sm dark:hidden"
               loading="lazy"
             />
+            {/* Dark mode stats — proper dark theme colors */}
             <img
-              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&hide_border=true&title_color=171717&icon_color=525252&text_color=404040&bg_color=ffffff`}
-              alt="GitHub contribution stats (dark)"
-              className="border border-gray-300 rounded-lg max-w-full sm:max-w-sm hidden dark:block dark:invert"
+              src={`https://github-readme-stats.vercel.app/api?username=${GITHUB_USERNAME}&show_icons=true&hide_border=true&title_color=e5e5e5&icon_color=a3a3a3&text_color=d4d4d4&bg_color=0a0a0a`}
+              alt="GitHub contribution stats"
+              className="border border-gray-800 rounded-lg max-w-full sm:max-w-sm hidden dark:block"
               loading="lazy"
             />
-            {/* Single top-langs image — same URL for both modes, invert in dark */}
+            {/* Light mode top-langs */}
             <img
               src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&hide_border=true&title_color=171717&text_color=404040&bg_color=ffffff`}
               alt="Top programming languages"
-              className="border border-gray-200 dark:border-gray-800 rounded-lg max-w-full sm:max-w-xs dark:hidden"
+              className="border border-gray-200 rounded-lg max-w-full sm:max-w-xs dark:hidden"
               loading="lazy"
             />
+            {/* Dark mode top-langs — proper dark theme, language colors preserved */}
             <img
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&hide_border=true&title_color=171717&text_color=404040&bg_color=ffffff`}
-              alt="Top programming languages (dark)"
-              className="border border-gray-300 rounded-lg max-w-full sm:max-w-xs hidden dark:block dark:invert"
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GITHUB_USERNAME}&layout=compact&hide_border=true&title_color=e5e5e5&text_color=d4d4d4&bg_color=0a0a0a`}
+              alt="Top programming languages"
+              className="border border-gray-800 rounded-lg max-w-full sm:max-w-xs hidden dark:block"
               loading="lazy"
             />
           </div>

@@ -33,17 +33,49 @@ html {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background-color: #ffffff;
   color: #0a0a0a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.25s ease, color 0.25s ease;
+  background-color: #ffffff;
 }
 
 /* Dark mode body */
 html.dark body {
-  background-color: #0a0a0a;
   color: #ffffff;
+  background-color: #0a0a0a;
+}
+
+/* Grid background layer — sits behind content, faded toward center */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  /* Light-mode grid: major 120px + minor 30px */
+  background-image:
+    linear-gradient(rgba(180, 180, 180, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180, 180, 180, 0.22) 1px, transparent 1px),
+    linear-gradient(rgba(210, 210, 210, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(210, 210, 210, 0.14) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 30px 30px, 30px 30px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+
+  /* Radial fade — grid is invisible at center, visible toward edges */
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, transparent 10%, black 80%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, transparent 10%, black 80%);
+}
+
+html.dark body::before {
+  background-image:
+    linear-gradient(rgba(80, 80, 80, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(80, 80, 80, 0.28) 1px, transparent 1px),
+    linear-gradient(rgba(50, 50, 50, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(50, 50, 50, 0.16) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 30px 30px, 30px 30px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
 }
 
 /* Custom scrollbar */
@@ -98,8 +130,10 @@ section {
 /* Divider */
 .section-divider {
   width: 100%;
-  height: 1px;
+  height: 4px;
+  margin: 2rem 0;
   background-color: #e5e5e5;
+  border-radius: 2px;
   transition: background-color 0.25s ease;
 }
 
